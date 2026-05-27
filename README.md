@@ -209,3 +209,37 @@ Although no successful compromise was identified, several hardening measures wer
 - Restricted inbound Remote Desktop Protocol (RDP) access using an Azure Network Security Group (NSG) to allow only authorized connections.
 - Implemented an account lockout policy to limit repeated authentication failures and mitigate brute force attempts.
 - Reduced the VM’s external attack surface by limiting unnecessary internet exposure and strengthening access controls.
+
+_________________________
+
+## Threat Hunt Process Improvements
+
+After review of the threat hunt process, an area of improvement in KQL syntax was identified in `Step 3: Determine Whether Top Failed IPs Successfully Authenticated`. 
+
+Recall that the KQL query used in Step 3 was used to investigate the list of 10 IPs with the highest failed logon attempts. 
+```kql
+// Investigate whether top failed IPs later succeeded in authentication
+let RemoteIPs = dynamic([
+    "159.100.20.23",
+    "51.178.174.31",
+    "102.88.21.214",
+    "54.151.176.0",
+    "188.246.226.124",
+    "135.125.90.97",
+    "45.238.132.30",
+    "95.213.184.95",
+    "211.229.255.252",
+    "188.68.217.132"
+]);
+DeviceLogonEvents
+| where LogonType has_any ("Network", "Interactive", "RemoteInteractive", "Unlock")
+| where ActionType == "LogonSuccess"
+| where RemoteIP has_any(RemoteIPs)
+```
+Although this query worked sufficiently for the purposes of this threat hunt, the line `| where RemoteIP has_any(RemoteIPs)` should be `| where RemoteIP in (RemoteIPs)`. 
+
+Why?
+- `has_any` is generally used for searching inside multi-value fields or text blobs
+- `in` is more appropriately used for explicit value matching against a list
+
+This slight change in syntax will be incorporated into future threat hunts for cleaner and semantically clearer querying.
