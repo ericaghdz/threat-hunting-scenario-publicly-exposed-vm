@@ -18,6 +18,19 @@ In this project, we simulated a scenario to seek out Virtual Machines running on
 
 ---
 
+## Table of Contents
+* [Step 1: Confirm Internet Exposure of Target Device](#step-1-confirm-internet-exposure-of-target-device)
+* [Step 2: Identify Top Source IPs Associated with Failed Logon Attempts](#step-2-identify-top-source-ips-associated-with-failed-logon-attempts)
+* [Step 3: Determine Whether Top Failed IPs Successfully Authenticated](#step-3-determine-whether-top-failed-ips-successfully-authenticated)
+* [Step 4: Validate Successful Logons to Legitimate User Account](#step-4-validate-successful-logons-to-legitimate-user-account)
+* [Step 5: Review Successful Authentication Activity](#step-5-review-successful-authentication-activity)
+* [Conclusion](#conclusion)
+* [Relevant MITRE ATT&CK Techniques](#relevant-mitre-attck-techniques)
+* [Response and Mitigation Actions](#response-and-mitigation-actions)
+* [Threat Hunt Process Improvements](#threat-hunt-process-improvements)
+
+---
+
 ## Step 1: Confirm Internet Exposure of Target Device
 
 A query was executed to determine whether the target system had been publicly exposed to the internet.
