@@ -41,7 +41,7 @@ The `windows-target-1` VM was confirmed to be internet-facing for several consec
 **Approximate investigation time:**
 - May 26, 2026 7:03:55 PM
 
-> **Important Note:** Microsoft Defender truncates `DeviceName` values after 15 characters. Due to this limitation, the query targeted `windows-target-` rather than the full hostname `windows-target-1`.
+> **Important Note:** Microsoft Defender truncates `DeviceName` values after 15 characters. Due to this limitation, the queries I used targeted `windows-target-` rather than the full hostname `windows-target-1`.
 
 _________________________
 
