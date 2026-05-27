@@ -65,6 +65,9 @@ DeviceLogonEvents
 ```
 
 ### Findings
+
+<img width="850" alt="image" src="Screenshot 2026-05-26 190047.png">
+
 The following IP addresses generated the highest number of failed authentication attempts within the previous seven days:
 
 | Remote IP | Failed Attempts |
@@ -110,6 +113,9 @@ DeviceLogonEvents
 ```
 
 ### Findings
+
+<img width="850" alt="image" src="Screenshot 2026-05-26 191502.png">
+
 No successful authentication attempts were returned from the query results.
 
 This indicates that **none of the top 10 external IP addresses responsible for failed logon activity successfully authenticated to the system**, reducing the likelihood of a successful brute force compromise originating from these sources.
