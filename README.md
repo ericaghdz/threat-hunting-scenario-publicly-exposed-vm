@@ -8,10 +8,8 @@ In this project, we simulated a scenario to seek out Virtual Machines running on
 
 ---
 
-<img width="1000" alt="image" src="">
-
 # Technology Utilized
-- Microsoft Defender for Endpoint | Endpoint Detection & Response (EDR) platform
+- Microsoft Defender for Endpoint | Endpoint Detection & Response (EDR) platform 
 - Kusto Query Language (KQL) | Log Querying & Analytics
 - Microsoft Azure Virtual Machines (VM)
 
