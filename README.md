@@ -25,7 +25,7 @@ A query was executed to determine whether the target system had been publicly ex
 ### KQL Query
 ```kql
 // Confirm whether target device has been internet-facing
-let DeviceName = "windows-target-";
+let honeypot = "windows-target-";
 DeviceInfo
 | where DeviceName == honeypot
 | where IsInternetFacing == true
